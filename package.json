@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/malcam/test-software-engineer.git"
+    "url": "git+https://github.com/amazingjosue/yaydoo-test-software-engineer.git"
   },
   "keywords": [
     "test",
     "software",
     "engineer"
   ],
-  "author": "ComparaOnline",
+  "author": "Josue Ramirez Salvador",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/malcam/test-software-engineer/issues"
@@ -27,6 +27,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-mocha": "^8.0.0",
-    "mocha": "^8.3.0"
+    "mocha": "^8.3.0",
+    "nodemon": "^2.0.4"
   }
 }
