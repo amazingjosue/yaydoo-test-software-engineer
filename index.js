@@ -1,6 +1,7 @@
 'use strict';
 
 const { Product, CarInsurance } = require('./src/coTest')
+require('./src/utiles/config');
 
 const productsAtDayZero = [
     new Product('Medium Coverage', 10, 20),

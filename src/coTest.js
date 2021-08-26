@@ -1,3 +1,9 @@
+const {Helpers}= require('./helpers')
+
+/**
+ * @name Product
+ * @constructor 
+ */
 class Product {
   constructor(name, sellIn, price) {
     this.name = name;
@@ -6,12 +12,27 @@ class Product {
   }
 }
 
+/**
+ * @name CarInsurance
+ * @constructor 
+ */
 class CarInsurance {
   constructor(products = []) {
     this.products = products;
     this.helpers = new Helpers();
   }
 
+  
+  /**
+   * @name updatePrice Update product with his own specific conditions according with the name
+   * @description
+   * @memberof CarInsurance
+   * @param {Object} product The product to update
+   * @param {Number} product.sellIn The days remaining to sell the product
+   * @param {Number} product.price The price of the product
+   * @param {Number} product.name The name of the product
+   * @returns {Object} The updated products
+   */
   updatePrice() {
     try {
       this.products.map(product => {
@@ -64,103 +85,6 @@ class CarInsurance {
       };
     }
   }
-}
-
-class Helpers {
-  constructor(product) {
-    this.product = product
-  }
-
-  /**
-   * @name
-   * @description
-   * @
-   * @param {Object} product 
-   * @returns {Object} 
-   */
-  defaultUpdate(product) {
-
-    let multiply = 1
-
-    if (product.sellIn <= 0)
-      multiply = 2
-
-    if (product.price > 50)
-      product.price = 50
-
-    if (product.price != 0)
-      product.price = product.price - 1 * multiply
-
-    product.sellIn = product.sellIn - 1
-
-    return product
-  }
-
-  fullCoverage(product) {
-
-    let multiply = 1
-
-    if (product.sellIn <= 0)
-      multiply = 2
-
-    if (product.price < 50)
-      product.price = product.price + (1 * multiply)
-
-    product.sellIn = product.sellIn - 1
-
-    if (product.price > 50)
-      product.price = 50
-
-    return product
-  }
-
-  specialFullCoverage(product) {
-
-    let multiply = 1;
-    let sum = 1;
-
-    if (product.sellIn <= 0) {
-      multiply = 2
-      product.price = product.price = 0
-    }
-
-    if (product.price != 0 && product.price < 50) {
-      if (product.sellIn < 11) {
-        sum = 2
-        if (product.sellIn < 6) {
-          sum = 3
-        }
-      }
-      product.price = product.price + sum * multiply;
-    }
-
-    product.sellIn = product.sellIn - 1
-
-    if (product.price > 50)
-      product.price = 50
-
-    return product
-  }
-
-  superSale(product) {
-
-    let multiply = 1
-
-    if (product.sellIn <= 0)
-      multiply = 2
-
-    if (product.price > 50)
-      product.price = 50
-
-    if (product.price != 0)
-      product.price = product.price - 2 * multiply
-
-    product.sellIn = product.sellIn - 1
-
-    return product
-  }
-
-
 }
 
 module.exports = {

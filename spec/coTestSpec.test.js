@@ -1,7 +1,7 @@
 'use strict';
 
 const chai = require('chai'),
-	expect = chai.expect,
+	expect = chai.expect;
 
 const coTest = require('../src/coTest');
 const CarInsurance = coTest.CarInsurance;
