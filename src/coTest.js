@@ -50,10 +50,18 @@ class CarInsurance {
         return product
 
       });
-      return this.products;
+      return {
+        products: this.products,
+        success: true
+      };
 
     } catch (error) {
       console.error(error)
+      return {
+        success: false,
+        products: [],
+        error: error.message || error
+      };
     }
   }
 }

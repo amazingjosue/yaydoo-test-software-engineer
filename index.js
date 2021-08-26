@@ -1,3 +1,5 @@
+'use strict';
+
 const { Product, CarInsurance } = require('./src/coTest')
 
 const productsAtDayZero = [
@@ -12,19 +14,15 @@ const productsAtDayZero = [
     new Product('Super Sale', 3, 6),
 ];
 
-const testCarInsurance = function () {
-    const carInsurance = new CarInsurance(productsAtDayZero);
-    const productPrinter = function (product) {
-        console.log(`${product.name}, ${product.sellIn}, ${product.price}`);
-    };
-    for (let i = 1; i <= 30; i += 1) {
-        console.log(`Day ${i}`);
-        console.log('name, sellIn, price');
-        carInsurance.updatePrice().forEach(productPrinter);
-        console.log('');
-    }
+
+const carInsurance = new CarInsurance(productsAtDayZero);
+const productPrinter = function (product) {
+    console.log(`${product.name}, ${product.sellIn}, ${product.price}`);
+};
+for (let i = 1; i <= 30; i += 1) {
+    console.log(`Day ${i}`);
+    console.log('name, sellIn, price');
+    carInsurance.updatePrice().products.forEach(productPrinter);
+    console.log('');
 }
 
-testCarInsurance();
-
-module.exports = { testCarInsurance }

@@ -4,6 +4,8 @@
   "description": "Software Engineer Test",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon --legacy-watch",
+    "after-30-days": "node --expose-gc index",
     "test": "mocha spec/*.js"
   },
   "repository": {
